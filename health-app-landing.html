@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>App Sức Khỏe — Tên App Của Bạn</title>
+<title>Eldershield</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+  
   :root {
     --black: #000;
     --white: #fff;
@@ -16,8 +16,9 @@
     --gray-200: #e8e8ed;
     --gray-500: #86868b;
     --gray-700: #424245;
-    --accent: #30d158; /* ← ĐỔI MÀU THƯƠNG HIỆU CỦA BẠN Ở ĐÂY */
-    --accent-2: #0071e3;
+    --accent: #30d158;
+    --accent-2: #27b7f5;
+    --accent-3: #96e4ef;
     --font: 'Be Vietnam Pro', sans-serif;
     --max-w: 980px;
   }
@@ -34,7 +35,7 @@
   /* ─── NAVBAR ─── */
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,0.85);
+    background: var(--accent-2);/* mau cua thanh top */
     backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid var(--gray-200);
     display: flex; align-items: center; justify-content: space-between;
@@ -42,14 +43,14 @@
   }
   nav .logo {
     font-weight: 800; font-size: 18px; letter-spacing: -0.5px;
-    color: var(--black); text-decoration: none;
+    color: var(--white); text-decoration: none;/* màu chữ của logo "Elder" */
   }
-  nav .logo span { color: var(--accent); }
+  nav .logo span { color: var(--white); }/* màu của chữ shiled*/
   nav ul { display: flex; gap: 28px; list-style: none; }
-  nav ul a { font-size: 13px; color: var(--gray-700); text-decoration: none; font-weight: 500; }
+  nav ul a { font-size: 13px; color: var(--white); text-decoration: none; font-weight: 500; }
   nav ul a:hover { color: var(--black); }
   nav .cta-btn {
-    background: var(--accent); color: var(--white); border: none;
+    background: var(--black); color: var(--white); border: none;/* màu của thanh tải */
     padding: 8px 18px; border-radius: 20px; font-size: 13px;
     font-weight: 600; cursor: pointer; font-family: var(--font);
     transition: opacity .2s;
@@ -62,8 +63,8 @@
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     text-align: center;
-    background: var(--black);
-    color: var(--white);
+    background: var(--white);/* nền của trang icon */
+    color: var(--black);/* chữ sức khỏa của bạn*/
     padding: 80px 24px 120px;
     position: relative; overflow: hidden;
   }
@@ -76,14 +77,7 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 32px;
     animation: float 3s ease-in-out infinite;
-    /* ← THAY BẰNG ẢNH ICON CỦA BẠN: background: url('icon1.png') center/cover */
   }
-  .hero-icon:nth-child(1) { background: linear-gradient(135deg,#ff3b30,#ff6b6b); animation-delay: 0s; }
-  .hero-icon:nth-child(2) { background: linear-gradient(135deg,#5856d6,#af52de); animation-delay: .3s; }
-  .hero-icon:nth-child(3) { background: linear-gradient(135deg,#007aff,#34aadc); animation-delay: .6s; }
-  .hero-icon:nth-child(4) { background: linear-gradient(135deg,#30d158,#34c759); animation-delay: .9s; }
-  .hero-icon:nth-child(5) { background: linear-gradient(135deg,#ff9f0a,#ffcc02); animation-delay: 1.2s; }
-  .hero-icon:nth-child(6) { background: linear-gradient(135deg,#ff2d55,#ff6b6b); animation-delay: 1.5s; }
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -91,39 +85,39 @@
   }
 
   .hero h1 {
-    font-size: clamp(40px, 7vw, 80px);
-    font-weight: 800; letter-spacing: -2px;
+    font-size: clamp(40px, 4vw, 70px);
+    font-weight: 800; /* độ đậm */letter-spacing: -2px;
     line-height: 1.05; margin-bottom: 24px;
   }
-  /* ← ĐỔI TÊN APP CỦA BẠN */
-  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero h1 em { font-style: normal; color: var(--black); /* chữ trong tầm tay bạn*/}
   .hero p {
-    font-size: clamp(17px, 2.5vw, 22px); color: #a1a1a6;
+    font-size: clamp(17px, 2.5vw, 22px); color: #888080;/* chữ theo dõi thể trạng */
     max-width: 640px; line-height: 1.6; margin-bottom: 40px;
     font-weight: 400;
   }
   .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
   .btn-primary {
-    background: var(--accent); color: var(--white);
+    background: var(--accent-2); color: var(--white); /* màu của hai thah tải app miễn phí và khám phá tính năng*/
     padding: 16px 32px; border-radius: 30px; font-size: 17px;
     font-weight: 600; text-decoration: none; transition: opacity .2s;
   }
   .btn-primary:hover { opacity: .85; }
   .btn-secondary {
-    background: transparent; color: var(--white);
+    background: var(--accent-2); color: var(--white);/* màu chữ của khám phá tính năng*/
     padding: 16px 32px; border-radius: 30px; font-size: 17px;
     font-weight: 600; text-decoration: none;
     border: 2px solid rgba(255,255,255,0.3);
     transition: border-color .2s;
   }
-  .btn-secondary:hover { border-color: var(--white); }
+  .btn-secondary:hover { border-color: var(--white); }/* viền của khám phá tính năng */
+
 
   /* ─── SECTION CHUNG ─── */
   section { padding: 120px 24px; }
   .section-inner { max-width: var(--max-w); margin: 0 auto; }
   .section-tag {
     display: inline-block; font-size: 13px; font-weight: 700;
-    letter-spacing: 1px; text-transform: uppercase; color: var(--accent);
+    letter-spacing: 1px; text-transform: uppercase; color: var(--black);/* các chữ như tính năng nổi bật, ...*/
     margin-bottom: 16px;
   }
   .section-title {
@@ -135,7 +129,7 @@
     max-width: 600px; font-weight: 400;
   }
 
-  /* ─── FEATURE SPLIT (ảnh trái, text phải) ─── */
+/* ─── FEATURE SPLIT (ảnh trái, text phải) ─── */
   .feature-split {
     display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
     align-items: center;
@@ -146,8 +140,7 @@
     width: 100%; border-radius: 24px; overflow: hidden;
     aspect-ratio: 4/3; background: var(--gray-100);
     display: flex; align-items: center; justify-content: center;
-    font-size: 80px; /* placeholder emoji */
-    /* ← THAY BẰNG: background: url('your-image.jpg') center/cover */
+    font-size: 80px;
   }
   .feature-img img { width: 100%; height: 100%; object-fit: cover; }
   .feature-text h2 { font-size: 36px; font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
@@ -155,31 +148,31 @@
   .feature-text a { color: var(--accent-2); font-size: 17px; font-weight: 500; text-decoration: none; }
   .feature-text a::after { content: ' →'; }
 
-  /* ─── DARK SECTION ─── */
-  .dark-section { background: var(--black); color: var(--white); }
+  /* ─── trang giấc ngủ ─── */
+  .dark-section { background: var(--gray-100); color: var(--black); }
   .dark-section .section-desc { color: #86868b; }
-  .dark-section .feature-img { background: #1c1c1e; }
+  .dark-section .feature-img { background: #ffffff; }
 
   /* ─── STATS BAR ─── */
   .stats-bar { background: var(--gray-100); }
   .stats-grid {
     display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 1px; background: var(--gray-200);
+    gap: 1px; background: var(--white); /* dấu thâtpj*/
     border-radius: 20px; overflow: hidden;
   }
   .stat-item {
     background: var(--white); padding: 48px 32px; text-align: center;
   }
-  .stat-num { font-size: 52px; font-weight: 800; letter-spacing: -2px; color: var(--accent); }
+  .stat-num { font-size: 52px; font-weight: 800; letter-spacing: -2px; color: var(--accent-2); }
   .stat-label { font-size: 16px; color: var(--gray-500); margin-top: 8px; font-weight: 500; }
 
-  /* ─── CARD GRID (features nhỏ) ─── */
+  /* ─── CARD GRID ─── */
   .card-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
     margin-top: 60px;
   }
   .card {
-    background: var(--gray-100); border-radius: 24px;
+    background: var(--gray-100); border-radius: 24px; /* 4 thẻ treong 6 thẻ*/
     padding: 40px 32px; position: relative; overflow: hidden;
     transition: transform .3s;
   }
@@ -188,38 +181,35 @@
     width: 60px; height: 60px; border-radius: 16px;
     display: flex; align-items: center; justify-content: center;
     font-size: 28px; margin-bottom: 20px;
-    /* ← THAY BẰNG ẢNH: background: url('icon.png') center/cover */
   }
   .card h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
   .card p { font-size: 15px; color: var(--gray-500); line-height: 1.6; }
-  /* Dark card variant */
-  .card.dark { background: #1c1c1e; color: var(--white); }
+  .card.dark { background: #ffffff; color: var(--black); }
   .card.dark p { color: #86868b; }
 
-  /* ─── FULL-WIDTH BANNER ─── */
+  /* ─── FULL-WIDTH BANNER ─── */ /* được khoa học chứng minh */
   .full-banner {
     position: relative; min-height: 600px;
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
-    /* ← THAY BẰNG: background: url('banner.jpg') center/cover */
-    background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+    background: var(--gray-100);
   }
   .full-banner-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,.8) 0%, rgba(0,0,0,.2) 100%);
+    background: var(--gray-100);
   }
   .full-banner-content {
     position: relative; z-index: 2; max-width: var(--max-w);
-    padding: 80px 24px; color: var(--white); width: 100%;
+    padding: 80px 24px; color: var(--black); width: 100%;
   }
-  .full-banner-content .section-tag { color: var(--accent); }
+  .full-banner-content .section-tag { color: var(--accent-2); }
   .full-banner-content .section-title { font-size: clamp(36px, 5vw, 64px); }
-  .full-banner-content .section-desc { color: rgba(255,255,255,.7); }
+  .full-banner-content .section-desc { color: var(--gray-500); }
 
   /* ─── TESTIMONIAL ─── */
   .testimonial-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 60px; }
   .testimonial {
-    background: var(--gray-100); border-radius: 24px; padding: 36px 28px;
+    background: var(--gray-100) /* bình luận*/; border-radius: 24px; padding: 36px 28px;
     transition: transform .3s;
   }
   .testimonial:hover { transform: translateY(-4px); }
@@ -230,18 +220,17 @@
     width: 44px; height: 44px; border-radius: 50%;
     background: var(--gray-200); display: flex; align-items: center;
     justify-content: center; font-size: 20px;
-    /* ← THAY: background: url('avatar.jpg') center/cover */
   }
   .author-name { font-weight: 700; font-size: 15px; }
   .author-role { font-size: 13px; color: var(--gray-500); }
 
   /* ─── CTA CUỐI TRANG ─── */
   .final-cta {
-    background: var(--black); color: var(--white);
+    background: var(--gray-100); color: var(--black);
     text-align: center; padding: 160px 24px;
   }
   .final-cta h2 { font-size: clamp(36px, 6vw, 72px); font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; }
-  .final-cta h2 em { font-style: normal; color: var(--accent); }
+  .final-cta h2 em { font-style: normal; color: var(--accent-2); }
   .final-cta p { font-size: 20px; color: #86868b; margin-bottom: 48px; }
   .app-badges { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
   .badge {
@@ -258,16 +247,16 @@
 
   /* ─── FOOTER ─── */
   footer {
-    background: #f5f5f7; padding: 48px 24px;
+    background: #000000; padding: 48px 24px;
     border-top: 1px solid var(--gray-200);
-    font-size: 13px; color: var(--gray-500);
+    font-size: 13px; color: var(--white);
   }
   .footer-inner {
     max-width: var(--max-w); margin: 0 auto;
     display: flex; justify-content: space-between; align-items: center;
     flex-wrap: wrap; gap: 16px;
   }
-  footer a { color: var(--gray-500); text-decoration: none; margin: 0 12px; }
+  footer a { color: var(--white); text-decoration: none; margin: 0 12px; }
   footer a:hover { color: var(--black); }
 
   /* ─── RESPONSIVE ─── */
@@ -278,16 +267,51 @@
     nav ul { display: none; }
   }
 
-  /* ─── SCROLL ANIMATION ─── */
-  .fade-up { opacity: 0; transform: translateY(40px); transition: opacity .8s ease, transform .8s ease; }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  /* ═══════════════════════════════════════
+     SCROLL ANIMATIONS
+  ════════════════════════════════════════ */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .fade-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .fade-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .fade-scale {
+    opacity: 0;
+    transform: scale(0.88);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+
+  .fade-up.visible,
+  .fade-left.visible,
+  .fade-right.visible,
+  .fade-scale.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Stagger delay cho các phần tử con */
+  .stagger > *:nth-child(1) { transition-delay: 0s; }
+  .stagger > *:nth-child(2) { transition-delay: .1s; }
+  .stagger > *:nth-child(3) { transition-delay: .2s; }
+  .stagger > *:nth-child(4) { transition-delay: .3s; }
+  .stagger > *:nth-child(5) { transition-delay: .4s; }
+  .stagger > *:nth-child(6) { transition-delay: .5s; }
 </style>
 </head>
 <body>
 
 <!-- ═══════════════════════════════════════
      NAVBAR
-     ← Thay "HealthApp" bằng tên app của bạn
 ════════════════════════════════════════ -->
 <nav>
   <a href="#" class="logo">Elder<span>shield</span></a>
@@ -303,25 +327,16 @@
 
 <!-- ═══════════════════════════════════════
      HERO SECTION
-     ← Thay icons (emoji hoặc <img>)
-     ← Thay tiêu đề và mô tả
+     fade-up cho toàn bộ nội dung hero
 ════════════════════════════════════════ -->
 <section class="hero">
-  <div class="hero-icons">
-    <!-- ← THAY 6 ICON NÀY BẰNG ICON APP CỦA BẠN -->
-    <div class="hero-icon">❤️</div>
-    <div class="hero-icon">🏃</div>
-    <div class="hero-icon">😴</div>
-    <div class="hero-icon">🥗</div>
-    <div class="hero-icon">🧘</div>
-    <div class="hero-icon">📊</div>
+  <div class="hero-icons fade-up">
   </div>
 
-  <!-- ← THAY TÊN APP & MÔ TẢ -->
-  <h1>Sức khỏe của bạn.<br><em>Trong tầm tay bạn.</em></h1>
-  <p>Theo dõi thể trạng, dinh dưỡng và giấc ngủ một cách thông minh. Được xây dựng dựa trên khoa học, được thiết kế cho cuộc sống thực.</p>
+  <h1 class="fade-up" style="transition-delay:.1s">Cha mẹ an toàn<br><em>Con cháu an tâm</em></h1>
+  <p class="fade-up" style="transition-delay:.2s">Theo dõi thể trạng, dinh dưỡng và giấc ngủ một cách thông minh. Được xây dựng dựa trên khoa học, được thiết kế cho cuộc sống thực.</p>
 
-  <div class="hero-btns">
+  <div class="hero-btns fade-up" style="transition-delay:.3s">
     <a href="#download" class="btn-primary">Tải App Miễn Phí</a>
     <a href="#features" class="btn-secondary">Khám Phá Tính Năng</a>
   </div>
@@ -330,25 +345,24 @@
 
 <!-- ═══════════════════════════════════════
      STATS BAR
-     ← Thay số liệu của bạn vào
+     fade-scale + stagger cho từng ô số liệu
 ════════════════════════════════════════ -->
 <section class="stats-bar" id="stats">
   <div class="section-inner">
-    <div class="stats-grid fade-up">
-      <!-- ← THAY SỐ LIỆU -->
-      <div class="stat-item">
+    <div class="stats-grid stagger">
+      <div class="stat-item fade-scale">
         <div class="stat-num">2M+</div>
         <div class="stat-label">Người Dùng Tin Tưởng</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item fade-scale">
         <div class="stat-num">4.9★</div>
         <div class="stat-label">Đánh Giá App Store</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item fade-scale">
         <div class="stat-num">50+</div>
         <div class="stat-label">Chỉ Số Sức Khỏe</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item fade-scale">
         <div class="stat-num">98%</div>
         <div class="stat-label">Người Dùng Hài Lòng</div>
       </div>
@@ -359,18 +373,16 @@
 
 <!-- ═══════════════════════════════════════
      FEATURE 1 — ẢNH TRÁI, TEXT PHẢI
-     ← Thay ảnh và nội dung
+     fade-left cho ảnh, fade-right cho text
 ════════════════════════════════════════ -->
 <section id="features">
   <div class="section-inner">
-    <div class="feature-split fade-up">
-      <div class="feature-img">
-        <!-- ← THAY BẰNG: <img src="your-image.jpg" alt="Mô tả ảnh"> -->
+    <div class="feature-split">
+      <div class="feature-img fade-left">
         📱
       </div>
-      <div class="feature-text">
+      <div class="feature-text fade-right">
         <span class="section-tag">Tính Năng Nổi Bật</span>
-        <!-- ← THAY TIÊU ĐỀ & NỘI DUNG -->
         <h2>Theo dõi sức khỏe tim mạch mỗi ngày.</h2>
         <p>Nhận thông báo thông minh khi nhịp tim bất thường. Theo dõi huyết áp, SpO2 và các chỉ số quan trọng khác ngay trên điện thoại của bạn.</p>
         <a href="#">Tìm hiểu thêm</a>
@@ -382,20 +394,19 @@
 
 <!-- ═══════════════════════════════════════
      FEATURE 2 — TEXT TRÁI, ẢNH PHẢI (reverse)
+     fade-right cho ảnh, fade-left cho text
 ════════════════════════════════════════ -->
 <section class="dark-section">
   <div class="section-inner">
-    <div class="feature-split reverse fade-up">
-      <div class="feature-img">
-        <!-- ← THAY BẰNG ẢNH -->
+    <div class="feature-split reverse">
+      <div class="feature-img fade-right">
         😴
       </div>
-      <div class="feature-text">
+      <div class="feature-text fade-left">
         <span class="section-tag">Giấc Ngủ</span>
-        <!-- ← THAY NỘI DUNG -->
         <h2>Hiểu rõ giấc ngủ của bạn hơn bao giờ hết.</h2>
         <p>Phân tích chu kỳ giấc ngủ, phát hiện ngủ ngáy và theo dõi chất lượng nghỉ ngơi để bạn thức dậy tràn đầy năng lượng mỗi sáng.</p>
-        <a href="#" style="color: var(--accent);">Khám phá tính năng ngủ</a>
+        <a href="#" style="color: var(--accent-2);">Khám phá tính năng ngủ</a>
       </div>
     </div>
   </div>
@@ -403,46 +414,44 @@
 
 
 <!-- ═══════════════════════════════════════
-     CARD GRID — NHIỀU TÍNH NĂNG NHỎ
-     ← Thêm/xóa/thay các card
+     CARD GRID
+     tiêu đề fade-up, cards fade-scale + stagger
 ════════════════════════════════════════ -->
 <section>
   <div class="section-inner">
     <div class="fade-up" style="text-align:center; max-width:600px; margin:0 auto 60px;">
       <span class="section-tag">Tất Cả Tính Năng</span>
-      <!-- ← THAY TIÊU ĐỀ -->
       <h2 class="section-title">Mọi thứ bạn cần để sống khỏe.</h2>
       <p class="section-desc">Từ dinh dưỡng đến tập luyện, tất cả trong một ứng dụng duy nhất.</p>
     </div>
 
-    <div class="card-grid fade-up">
-      <!-- ← THAY 6 CARD NÀY — thêm/xóa tùy ý -->
-      <div class="card">
+    <div class="card-grid stagger">
+      <div class="card fade-scale">
         <div class="card-icon" style="background:linear-gradient(135deg,#ff3b30,#ff6b6b);">🏃</div>
         <h3>Theo Dõi Vận Động</h3>
         <p>Đếm bước chân, đo calo tiêu thụ và theo dõi lộ trình chạy bộ với GPS chính xác cao.</p>
       </div>
-      <div class="card">
+      <div class="card fade-scale">
         <div class="card-icon" style="background:linear-gradient(135deg,#30d158,#34c759);">🥗</div>
         <h3>Nhật Ký Dinh Dưỡng</h3>
         <p>Quét mã vạch thực phẩm, tính toán macro và nhận gợi ý bữa ăn phù hợp mục tiêu của bạn.</p>
       </div>
-      <div class="card dark">
+      <div class="card dark fade-scale">
         <div class="card-icon" style="background:linear-gradient(135deg,#5856d6,#af52de);">🧘</div>
         <h3>Sức Khỏe Tâm Thần</h3>
         <p>Thiền định có hướng dẫn, theo dõi trạng thái tâm lý và bài tập thở giúp giảm căng thẳng.</p>
       </div>
-      <div class="card dark">
+      <div class="card dark fade-scale">
         <div class="card-icon" style="background:linear-gradient(135deg,#007aff,#34aadc);">💧</div>
         <h3>Theo Dõi Nước</h3>
         <p>Nhắc nhở uống nước thông minh dựa trên cân nặng, thời tiết và mức độ hoạt động của bạn.</p>
       </div>
-      <div class="card">
+      <div class="card fade-scale">
         <div class="card-icon" style="background:linear-gradient(135deg,#ff9f0a,#ffcc02);">📊</div>
         <h3>Báo Cáo Sức Khỏe</h3>
         <p>Biểu đồ trực quan theo tuần/tháng/năm giúp bạn nhìn thấy sự tiến bộ rõ ràng theo thời gian.</p>
       </div>
-      <div class="card">
+      <div class="card fade-scale">
         <div class="card-icon" style="background:linear-gradient(135deg,#ff2d55,#ff6b6b);">❤️</div>
         <h3>Kết Nối Thiết Bị</h3>
         <p>Đồng bộ với Apple Health, Google Fit, smartwatch và hơn 50 thiết bị đeo thông minh.</p>
@@ -454,14 +463,12 @@
 
 <!-- ═══════════════════════════════════════
      FULL-WIDTH BANNER
-     ← Thay background-image bằng ảnh của bạn
+     fade-up cho nội dung bên trong
 ════════════════════════════════════════ -->
-<div class="full-banner fade-up"
-  style="/* ← THAY DÒNG NÀY: background: url('your-banner.jpg') center/cover no-repeat; */">
+<div class="full-banner">
   <div class="full-banner-overlay"></div>
-  <div class="full-banner-content">
+  <div class="full-banner-content fade-up">
     <span class="section-tag">Được Khoa Học Chứng Minh</span>
-    <!-- ← THAY NỘI DUNG BANNER -->
     <h2 class="section-title" style="max-width:600px;">Sức khỏe của bạn là ưu tiên số một của chúng tôi.</h2>
     <p class="section-desc" style="margin-top:16px;">Mọi tính năng đều được phát triển cùng đội ngũ bác sĩ và chuyên gia dinh dưỡng hàng đầu Việt Nam.</p>
   </div>
@@ -469,8 +476,8 @@
 
 
 <!-- ═══════════════════════════════════════
-     TESTIMONIALS — ĐÁNH GIÁ NGƯỜI DÙNG
-     ← Thay nội dung 3 đánh giá
+     TESTIMONIALS
+     tiêu đề fade-up, từng testimonial fade-scale + stagger
 ════════════════════════════════════════ -->
 <section id="reviews">
   <div class="section-inner">
@@ -479,9 +486,8 @@
       <h2 class="section-title">Hàng triệu người đã thay đổi thói quen.</h2>
     </div>
 
-    <div class="testimonial-grid fade-up">
-      <!-- ← THAY 3 TESTIMONIAL NÀY -->
-      <div class="testimonial">
+    <div class="testimonial-grid stagger">
+      <div class="testimonial fade-scale">
         <div class="stars">★★★★★</div>
         <blockquote>"Tôi đã giảm 8kg trong 3 tháng nhờ theo dõi dinh dưỡng mỗi ngày. App đơn giản và dễ dùng hơn tôi nghĩ!"</blockquote>
         <div class="testimonial-author">
@@ -492,7 +498,7 @@
           </div>
         </div>
       </div>
-      <div class="testimonial">
+      <div class="testimonial fade-scale">
         <div class="stars">★★★★★</div>
         <blockquote>"Tính năng theo dõi giấc ngủ giúp tôi phát hiện mình ngủ không đủ giấc sâu. Bây giờ tôi ngủ tốt hơn nhiều rồi."</blockquote>
         <div class="testimonial-author">
@@ -503,7 +509,7 @@
           </div>
         </div>
       </div>
-      <div class="testimonial">
+      <div class="testimonial fade-scale">
         <div class="stars">★★★★★</div>
         <blockquote>"App tốt nhất tôi từng dùng. Giao diện đẹp, không có quảng cáo và nhắc nhở rất thông minh đúng lúc tôi cần."</blockquote>
         <div class="testimonial-author">
@@ -520,16 +526,14 @@
 
 
 <!-- ═══════════════════════════════════════
-     CTA CUỐI TRANG — KÊU GỌI TẢI APP
-     ← Thay link App Store / Google Play
+     CTA CUỐI TRANG
+     fade-up cho toàn bộ nội dung
 ════════════════════════════════════════ -->
 <section class="final-cta" id="download">
-  <!-- ← THAY TIÊU ĐỀ VÀ MÔ TẢ -->
-  <h2>Bắt đầu hành trình<br><em>sức khỏe ngay hôm nay.</em></h2>
-  <p>Miễn phí. Không cần thẻ tín dụng. Sẵn sàng trên iOS & Android.</p>
+  <h2 class="fade-up">Bắt đầu hành trình<br><em>sức khỏe ngay hôm nay.</em></h2>
+  <p class="fade-up" style="transition-delay:.1s">Miễn phí. Không cần thẻ tín dụng. Sẵn sàng trên iOS & Android.</p>
 
-  <div class="app-badges">
-    <!-- ← THAY href BẰNG LINK APP STORE THẬT CỦA BẠN -->
+  <div class="app-badges fade-up" style="transition-delay:.2s">
     <a href="#" class="badge">
       <span class="badge-icon">🍎</span>
       <div class="badge-text">
@@ -537,7 +541,6 @@
         <strong>App Store</strong>
       </div>
     </a>
-    <!-- ← THAY href BẰNG LINK GOOGLE PLAY THẬT CỦA BẠN -->
     <a href="#" class="badge">
       <span class="badge-icon">▶️</span>
       <div class="badge-text">
@@ -551,14 +554,11 @@
 
 <!-- ═══════════════════════════════════════
      FOOTER
-     ← Thay tên công ty và các link
 ════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
-    <!-- ← THAY TÊN CÔNG TY / NĂM -->
     <span>© 2025 Công ty của bạn. Đã đăng ký bản quyền.</span>
     <div>
-      <!-- ← THAY CÁC LINK FOOTER -->
       <a href="#">Chính Sách Bảo Mật</a>
       <a href="#">Điều Khoản Sử Dụng</a>
       <a href="#">Liên Hệ</a>
@@ -568,11 +568,16 @@
 
 
 <script>
-  // Scroll animation — tự động chạy, không cần sửa
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up, .fade-left, .fade-right, .fade-scale').forEach(el => io.observe(el));
 </script>
 
 </body>
