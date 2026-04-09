@@ -147,6 +147,31 @@
   .feature-text p { font-size: 17px; color: var(--gray-500); line-height: 1.7; margin-bottom: 24px; }
   .feature-text a { color: var(--accent-2); font-size: 17px; font-weight: 500; text-decoration: none; }
   .feature-text a::after { content: ' →'; }
+  
+ .feature-split {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: center;
+  }
+  .feature-split.reverse { direction: rtl; }
+  .feature-split.reverse > * { direction: ltr; }
+  .feature-img {
+    width: 100%; border-radius: 24px; overflow: hidden;
+    aspect-ratio: 4/3; background: var(--gray-100);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 80px;
+  }
+  .feature-img img { width: 100%; height: 100%; object-fit: cover; }
+  .feature-text h2 { font-size: 36px; font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+  .feature-text p { font-size: 17px; color: var(--gray-500); line-height: 1.7; margin-bottom: 24px; }
+  .feature-text a { color: var(--accent-2); font-size: 17px; font-weight: 500; text-decoration: none; }
+  .feature-text a::after { content: ' →'; }
+  .last-img {
+  padding: 12px;
+}
+
+.last-img img {
+  object-fit: contain;
+}
 
   /* ─── trang giấc ngủ ─── */
   .dark-section { background: var(--gray-100); color: var(--black); }
@@ -375,16 +400,16 @@
      FEATURE 1 — ẢNH TRÁI, TEXT PHẢI
      fade-left cho ảnh, fade-right cho text
 ════════════════════════════════════════ -->
-<section id="features">
+<section id="feature-1">
   <div class="section-inner">
     <div class="feature-split">
       <div class="feature-img fade-left">
-        📱
+         <img src= "https://i.ibb.co/qYfP5T0s/image1.jpg" alt="feature image">
       </div>
       <div class="feature-text fade-right">
         <span class="section-tag">Tính Năng Nổi Bật</span>
-        <h2>Huấn luyện viên AI thời gian thực</h2>
-        <p>Theo dõi chuyển động và tự động đếm số lần tập. Phân tích sai tư thế. Phát cảnh báo bằng giọng nói ngay lập tức. Ghi nhận thời gian tập, cường độ và mức độ hoàn thành bài tập</p>
+        <h2>Trợ lý gợi ý bài tập rèn luyện phù hợp</h2>
+        <p>Gợi ý các bài tập dựa trên thể trạng của bệnh nhân. Theo dõi chuyển động và tự động đếm số lần tập. Phân tích sai tư thế. Phát cảnh báo bằng giọng nói ngay lập tức. Ghi nhận thời gian tập, cường độ và mức độ hoàn thành bài tập</p>
         <a href="#">Tìm hiểu thêm</a>
       </div>
     </div>
@@ -396,23 +421,37 @@
      FEATURE 2 — TEXT TRÁI, ẢNH PHẢI (reverse)
      fade-right cho ảnh, fade-left cho text
 ════════════════════════════════════════ -->
-<section class="dark-section">
+<section class="dark-section" id="feature-2">
   <div class="section-inner">
     <div class="feature-split reverse">
       <div class="feature-img fade-right">
-        😴
+        <img src= "https://i.ibb.co/N6V0S3RN/nh.jpg" alt="feature image">
       </div>
       <div class="feature-text fade-left">
-        <span class="section-tag">Kết nối đa chiều</span>
-        <h2>Dashboard dành cho bác sĩ và người thân</h2>
-        <p>Xem biểu đồ sức bền, thời gian tập, mức độ ổn định. Theo dõi cảnh báo té ngã. Tạo và chỉnh sửa phác đồ tập luyện từ xa. Cập nhật đơn thuốc</p>
+        <span class="section-tag">Theo dõi sức khoẻ thông minh</span>
+        <h2>Nhận diện và cảnh báo sớm các nguy cơ sức khỏe theo thời gian thực</h2>
+        <p>Ai ghi nhận các chỉ số sức khoẻ thông qua các bài tập luyện và đưa ra cảnh báo nếu có dấu hiệu bất thường.</p>
         <a href="#" style="color: var(--accent-2);">Tìm hiểu thêm</a>
       </div>
     </div>
   </div>
 </section>
 
-
+<section id="feature-3">
+  <div class="section-inner">
+    <div class="feature-split">
+      <div class="feature-img last-img">
+        <img src= "https://i.ibb.co/BKrjBxXP/c5e2d8e3-6fc5-4345-8f7d-d7cc040d4ab4.jpg" alt="feature image">
+      </div>
+      <div class="feature-text fade-right">
+        <span class="section-tag">Kết nối gia đình</span>
+        <h2>Hệ thống thông báo cảnh báo tới người thân</h2>
+        <p>Xem biểu đồ sức bền, thời gian tập, mức độ ổn định. Nhận thông báo cảnh báo ngay lập tức khi AI ghi nhận chỉ số bất thường</p>
+        <a href="#" style="color: var(--accent-2);">Tìm hiểu thêm</a>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- ═══════════════════════════════════════
      CARD GRID
      tiêu đề fade-up, cards fade-scale + stagger
@@ -428,12 +467,12 @@
     <div class="card-grid stagger">
       <div class="card fade-scale">
         <div class="card-icon" style="background:linear-gradient(135deg, #5E5CE6, #AF52DE);">🤖</div>
-        <h3>Huấn luyện viên AI thời gian thực</h3>
+        <h3>Gợi ý các bài tập phù hợp</h3>
         <p>Theo dõi chuyển động. Phân tích sai tư thế. Phát cảnh báo bằng giọng nói. Ghi nhận cường độ và mức độ</p>
       </div>
       <div class="card fade-scale">
         <div class="card-icon" style="background:linear-gradient(135deg, #FAD961, #F76B1C);">⚠️</div>
-        <h3>Phân tích nguy cơ té ngã</h3>
+        <h3>Đánh giá mức độ thăng bằng</h3>
         <p>Độ lệch trọng tâm. Dao động khi đứng yên. Tốc độ phản xạ khi chuyển tư thế. Gia tốc bất thường</p>
       </div>
       <div class="card dark fade-scale">
@@ -443,7 +482,7 @@
       </div>
       <div class="card dark fade-scale">
         <div class="card-icon" style="background:linear-gradient(135deg, #2193b0, #6dd5ed);">🔍</div>
-        <h3>Nhận diện suy giảm vận động sớm</h3>
+        <h3>Phát hiện suy giảm vận động sớm</h3>
         <p>Phân tích độ rung tay khi giữ tư thế. Đo độ ổn định khớp gối và cổ chân. So sánh dữ liệu hiện tại với “Bài tập khởi đầu” </p>
       </div>
       <div class="card fade-scale">
@@ -489,34 +528,34 @@
     <div class="testimonial-grid stagger">
       <div class="testimonial fade-scale">
         <div class="stars">★★★★★</div>
-        <blockquote>"Tôi đã giảm 8kg trong 3 tháng nhờ theo dõi dinh dưỡng mỗi ngày. App đơn giản và dễ dùng hơn tôi nghĩ!"</blockquote>
+        <blockquote>"Từ khi dùng ứng dụng, mình yên tâm hơn hẳn khi đi làm xa. Mỗi khi bố mình có dấu hiệu mất thăng bằng là hệ thống báo về điện thoại ngay, giúp gia đình kịp thòi phản ứng. "</blockquote>
         <div class="testimonial-author">
           <div class="avatar">👩</div>
           <div>
             <div class="author-name">Nguyễn Thị Lan</div>
-            <div class="author-role">Hà Nội · Nhân viên văn phòng</div>
+            <div class="author-role">Hà Nội · Hướng dẫn viên du lịch</div>
           </div>
         </div>
       </div>
       <div class="testimonial fade-scale">
         <div class="stars">★★★★★</div>
-        <blockquote>"Tính năng theo dõi giấc ngủ giúp tôi phát hiện mình ngủ không đủ giấc sâu. Bây giờ tôi ngủ tốt hơn nhiều rồi."</blockquote>
+        <blockquote>"Tôi vốn không rành công nghệ, nhưng ứng dụng này rất dễ nhìn, chữ to và hiển thị rõ ràng. Bài tập hàng ngày phong phú, đa dạng và phù hợp với thể trạng của tôi."</blockquote>
+        <div class="testimonial-author">
+          <div class="avatar">👨</div>
+          <div>
+            <div class="author-name">Trần Văn Nam</div>
+            <div class="author-role">TP.HCM · Người dùng thường xuyên</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial fade-scale">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Điều mình trân trọng nhất ở ứng dụng là phần Dashboard. Dù bận rộn đến đâu, mình chỉ cần mở điện thoại là có thể nắm bắt được tình hình tổng quan về sức khỏe của bố mẹ."</blockquote>
         <div class="testimonial-author">
           <div class="avatar">👨</div>
           <div>
             <div class="author-name">Trần Minh Khoa</div>
-            <div class="author-role">TP.HCM · Lập trình viên</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial fade-scale">
-        <div class="stars">★★★★★</div>
-        <blockquote>"App tốt nhất tôi từng dùng. Giao diện đẹp, không có quảng cáo và nhắc nhở rất thông minh đúng lúc tôi cần."</blockquote>
-        <div class="testimonial-author">
-          <div class="avatar">👩</div>
-          <div>
-            <div class="author-name">Phạm Thu Hằng</div>
-            <div class="author-role">Đà Nẵng · Huấn luyện viên</div>
+            <div class="author-role">Đà Nẵng · Lập trình viên</div>
           </div>
         </div>
       </div>
